@@ -163,26 +163,30 @@ namespace DarkAndDarker
             Graphics g = this.CreateGraphics();
             if (knife == "up")
             {
-                Rectangle knifeUp = new Rectangle(hero.X, hero.Y, 5, 25);
+                BackColor = Color.Red;
+                Rectangle knifeUp = new Rectangle(hero.X + (hero.Width / 2), hero.Y - (hero.Height / 2), 5, 30);
                 g.FillRectangle(whiteBrush, knifeUp);
             }
-            /*
+            
             else if (knife == "down")
             {
-                Rectangle knifeDown = new Rectangle(hero.X + hero.Width, hero.Y - (hero.Height / 2), 7, 5);
+                BackColor = Color.Blue;
+                Rectangle knifeDown = new Rectangle(hero.X + (hero.Width / 2), hero.Y + (hero.Height / 2) -1, 5, 30);
                 g.FillRectangle(whiteBrush, knifeDown);
             }
             else if (knife == "left")
             {
-                Rectangle knifeLeft = new Rectangle(hero.X + hero.Width, hero.Y + (hero.Height / 2), 7, 5);
+                BackColor = Color.Green;
+                Rectangle knifeLeft = new Rectangle(hero.X - hero.Width + 15, hero.Y + (hero.Height / 2), 20, 5);
                 g.FillRectangle(whiteBrush, knifeLeft);
             }
             else if (knife == "right")
             {
-                Rectangle knifeRight = new Rectangle(hero.X + hero.Width, hero.Y + (hero.Height / 2), 7, 5);
+                BackColor = Color.Yellow;
+                Rectangle knifeRight = new Rectangle(hero.X + hero.Width, hero.Y + (hero.Height / 2), 15, 5);
                 g.FillRectangle(whiteBrush, knifeRight);
             } 
-           */
+           
             //room = 2;
         }
 
@@ -191,6 +195,10 @@ namespace DarkAndDarker
             switch (room)
             {
                 case 1:
+                    if (hero.X == 170 && hero.Y == 70)
+                    {
+                        room = 2;
+                    }
                     //walls
                     if (hero.X < 80)
                     {
@@ -244,36 +252,44 @@ namespace DarkAndDarker
             if (upDown == true && hero.Y > 0)
             {
                 hero.Y -= heroSpeed;
+                knife = "up";
             }
             if (downDown == true && hero.Y > 0)
             {
                 hero.Y += heroSpeed;
+                knife = "down";
             }
 
             if (wDown == true && hero.Y > 0)
             {
+                knife = "up";
                 hero.Y -= heroSpeed;
             }
             if (sDown == true && hero.Y > 0)
             {
                 hero.Y += heroSpeed;
+                knife = "down";
             }
 
             if (aDown == true && hero.X > 0)
             {
                 hero.X -= heroSpeed;
+                knife = "left";
             }
             if (dDown == true && hero.X > 0)
             {
                 hero.X += heroSpeed;
+                knife = "right";
             }
             if (leftDown == true && hero.X > 0)
             {
                 hero.X -= heroSpeed;
+                knife = "left";
             }
             if (rightDown == true && hero.X > 0)
             {
                 hero.X += heroSpeed;
+                knife = "right";
             }
         
     
