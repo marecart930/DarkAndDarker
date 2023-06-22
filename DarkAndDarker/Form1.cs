@@ -83,7 +83,7 @@ namespace DarkAndDarker
             {
                 e.Graphics.FillRectangle(whiteBrush, room2Hleft);
             }
-
+            // shows hero coordinates 
             if (debugging == true)
             {
                 cordLabel.Visible = true;
@@ -160,6 +160,7 @@ namespace DarkAndDarker
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
+            //draw the knife into the game based on what direction the hero was just moved
             Graphics g = this.CreateGraphics();
             if (knife == "up")
             {
@@ -192,6 +193,7 @@ namespace DarkAndDarker
 
         private void gameTimer_Tick(object sender, EventArgs e)
         { 
+            //wall collisions. If hero goes to 170, 70 (door) the level will switch to room 2
             switch (room)
             {
                 case 1:
@@ -248,7 +250,7 @@ namespace DarkAndDarker
                     break;
             }
 
-
+            //movement and tracking player direction
             if (upDown == true && hero.Y > 0)
             {
                 hero.Y -= heroSpeed;

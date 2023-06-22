@@ -71,7 +71,7 @@
             this.cordLabel.AutoSize = true;
             this.cordLabel.BackColor = System.Drawing.Color.Transparent;
             this.cordLabel.ForeColor = System.Drawing.Color.Lime;
-            this.cordLabel.Location = new System.Drawing.Point(58, 54);
+            this.cordLabel.Location = new System.Drawing.Point(80, 496);
             this.cordLabel.Name = "cordLabel";
             this.cordLabel.Size = new System.Drawing.Size(35, 13);
             this.cordLabel.TabIndex = 2;
